@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TabsAndDrawerMenu</string>
+    <string name="app_name">Tabs And DrawerMenu</string>
     <string name="first_item_title">Monday</string>
     <string name="second_item_title">Tuesday</string>
     <string name="third_item_title">Wednesday</string>
