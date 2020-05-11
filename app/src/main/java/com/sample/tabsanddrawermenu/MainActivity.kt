@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.third_item_title)))
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.fourth_item_title)))
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.fifth_item_title)))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.sixth_item_title)))
         // Tab Item Page Manager
         pagerAdapter = PagerAdapter(
             supportFragmentManager,

@@ -12,6 +12,7 @@ class PagerAdapter(fm: FragmentManager, behavior: Int, private val tabsNumber: I
             2 -> ThirdFragment()
             3 -> FourthFragment()
             4 -> FifthFragment()
+            5 -> SixthFragment()
             else -> FirstFragment()
         }
     }

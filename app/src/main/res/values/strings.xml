@@ -5,6 +5,8 @@
     <string name="third_item_title">Wednesday</string>
     <string name="fourth_item_title">Thursday</string>
     <string name="fifth_item_title">Friday</string>
+    <string name="sixth_item_title">Saturday</string>
+    <string name="seventh_item_title">Sunday</string>
     <string name="open">open</string>
     <string name="close">close</string>
 
