@@ -1,8 +1,11 @@
 package com.sample.tabsanddrawermenu
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentPagerAdapter
@@ -15,7 +18,7 @@ import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import com.sample.tabsanddrawermenu.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.content_main.view.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
@@ -41,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         // Drawer Layout
         drawerLayout = binding.drawerLayout
         navigationView = binding.navView
+        // Listening to the OnNavigationItemSelectedListener event
+        navigationView.setNavigationItemSelectedListener(this)
+
         toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.isDrawerIndicatorEnabled = true
@@ -70,5 +76,13 @@ class MainActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
 
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        drawerLayout!!.closeDrawer(GravityCompat.START)
+        if (item.itemId == R.id.menu_item) {
+            Toast.makeText(this, "Btn is clicked.", Toast.LENGTH_SHORT).show()
+        }
+        return false
     }
 }
